@@ -9,7 +9,7 @@ function AddItem({ newTodo, setNewTodo, handleSubmit }) {
         autoFocus
         id="addItem"
         type="text"
-        placeholder="Add a Task"
+        placeholder="Enter your task"
         required
         value={newTodo}
         onChange={(e) => setNewTodo(e.target.value)}

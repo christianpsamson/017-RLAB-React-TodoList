@@ -1,6 +1,6 @@
 import TodoItem from "./TodoItem";
 
-const TodoList = ({ items, handleCheck, handleDelete }) => {
+const TodoList = ({ items, handleCheck, handleDelete, handleEdit }) => {
   return (
     <main>
       {items.length ? (
@@ -13,6 +13,7 @@ const TodoList = ({ items, handleCheck, handleDelete }) => {
               item={item.item}
               handleCheck={handleCheck}
               handleDelete={handleDelete}
+              handleEdit={handleEdit}
             />
           ))}
         </ul>

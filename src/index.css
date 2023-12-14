@@ -141,6 +141,17 @@ ul li::before {
   outline: none;
 }
 
+.editTask {
+  flex-grow: 1;
+  max-width: calc(100% - 50px);
+  min-height: 48px;
+  font-size: 1rem;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  margin-right: 0.25rem;
+  outline: none;
+}
+
 button {
   height: 48px;
   min-width: 48px;

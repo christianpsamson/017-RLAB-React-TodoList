@@ -50,6 +50,13 @@ function App() {
     setItems(listItems);
   };
 
+  const handleEdit = (id, editedTodo) => {
+    const updatedItems = items.map((item) =>
+      item.id === id ? { ...item, item: editedTodo } : item
+    );
+    setItems(updatedItems);
+  };
+
   return (
     <div className="App">
       <h1>My Todo List</h1>
@@ -62,6 +69,7 @@ function App() {
         items={items}
         handleCheck={handleCheck}
         handleDelete={handleDelete}
+        handleEdit={handleEdit}
       />
       <Footer length={items.length} />
     </div>
