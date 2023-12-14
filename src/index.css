@@ -193,3 +193,8 @@ button:hover {
   border-radius: 0.25rem;
   outline: none;
 }
+
+.trashIcon.disabled {
+  color: lightgray;
+  pointer-events: none;
+}

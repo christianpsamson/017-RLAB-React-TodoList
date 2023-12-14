@@ -58,9 +58,11 @@ function TodoItem({
             tabIndex="0"
           />
           <FaTrash
-            onClick={() => handleDelete(id)}
+            className={`trashIcon ${checked ? "" : "disabled"}`}
+            onClick={checked ? () => handleDelete(id) : undefined}
             role="button"
             tabIndex="1"
+            disabled={!checked}
           />
         </>
       )}

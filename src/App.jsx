@@ -7,7 +7,7 @@ import AddItem from "./AddItem";
 const defaultItems = [
   {
     id: 1,
-    checked: true,
+    checked: false,
     item: "Prepare breakfast",
   },
   {
@@ -26,7 +26,7 @@ function App() {
   const [items, setItems] = useState(defaultItems);
   const [newTodo, setNewTodo] = useState("");
 
-  // Callback function for onChange (mark check)
+  // Callback function for onChange (mark checkbox)
   const handleCheck = (id) => {
     // prettier-ignore
     const listItems = items.map((item) => item.id === id ? { ...item, checked: !item.checked } : item);
@@ -50,6 +50,7 @@ function App() {
     setItems(listItems);
   };
 
+  // Callback function for onClick (edit item)
   const handleEdit = (id, editedTodo) => {
     const updatedItems = items.map((item) =>
       item.id === id ? { ...item, item: editedTodo } : item
