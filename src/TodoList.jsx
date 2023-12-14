@@ -18,7 +18,11 @@ const TodoList = ({ items, handleCheck, handleDelete, handleEdit }) => {
           ))}
         </ul>
       ) : (
-        <p>You do not have todo list</p>
+        <>
+          <br />
+          <br />
+          <p>You do not have todo list</p>
+        </>
       )}
     </main>
   );
