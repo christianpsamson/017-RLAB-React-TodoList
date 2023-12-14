@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { FaTrash } from "react-icons/fa";
 import { RiEdit2Fill } from "react-icons/ri";
 
@@ -13,6 +13,13 @@ function TodoItem({
 }) {
   const [isEditing, setIsEditing] = useState(false);
   const [editedTodo, setEditedTodo] = useState(item);
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    if (isEditing && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [isEditing]);
 
   const handleEditClick = () => {
     setIsEditing(true);
@@ -28,6 +35,7 @@ function TodoItem({
   return (
     <li className="item" key={id}>
       <input
+        className="custom-checkbox"
         id={`checkbox-${id}`}
         type="checkbox"
         onChange={() => handleCheck(id)}
@@ -37,6 +45,7 @@ function TodoItem({
       {isEditing ? (
         <>
           <input
+            ref={inputRef}
             className="editTask"
             type="text"
             value={editedTodo}

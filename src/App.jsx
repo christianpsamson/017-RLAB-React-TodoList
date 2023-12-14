@@ -60,7 +60,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>My Todo List</h1>
+      <header>My Todo List</header>
       <AddItem
         newTodo={newTodo}
         setNewTodo={setNewTodo}
